@@ -1,1 +1,1 @@
-# shakira-all-status
+# streaming-status-rizentry
