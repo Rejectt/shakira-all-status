@@ -1,15 +1,27 @@
 if(!Discord) var Discord = require('discord.js');
 if(!client) var client = new Discord.Client();
-if(!prefix) var prefix = "r-";
+if(!prefix) var prefix = "s-";
 
-const adminprefix = "r-";
-const devs = ['504250844934438922'];
+const adminprefix = "s-";
+const devs = ['437653059871571970'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
+if (message.content.startsWith(adminprefix + 'play')) {
+  client.user.setGame(argresult)
+    message.channel.sendMessage(`**:white_check_mark: | ${argresult}**`).then(message => {message.delete(6000)})
+} else 
+  if (message.content.startsWith(adminprefix + 'wt')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.sendMessage(`**:white_check_mark: | ${argresult}**`).then(message => {message.delete(6000)})
+  } else 
+  if (message.content.startsWith(adminprefix + 'lis')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.sendMessage(`**:white_check_mark: | ${argresult}**`).then(message => {message.delete(6000)})
+  } else 
 if (message.content.startsWith(adminprefix + 'st')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk")
-    message.channel.sendMessage(`**:white_check_mark: | ${argresult}**`).then(message => {message.delete(5000)})
+  client.user.setGame(argresult, "https://www.twitch.tv/Allwai")
+    message.channel.sendMessage(`**:white_check_mark: | ${argresult}**`).then(message => {message.delete(6000)})
 }
 });
 
