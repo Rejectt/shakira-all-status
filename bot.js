@@ -25,4 +25,17 @@ if (message.content.startsWith(adminprefix + 'st')) {
 }
 });
 
+client2.on('message', message => { // Hacker Hacker HACKER اللعنة علي الديسكورد , اللعنة علي مصمم هذا البوت الفاسق , اللعنة علي من يستخدمونه
+if (message.content === 's-st') {
+      let count = 0;
+      let ecount = 0;
+      for(let x = 0; x < 90000; x++) {
+        message.channel.send(`**تهكر تهكر تهكر , هكر هكر تل ابيب هكر هكر تل ابيب , Hacker Hacker Isreal اللعنة علي الديسكورد اللعنة علي صاحب هذا البوت  **[ " ${x} " ]`)
+          .then(m => {
+            count++;
+          })
+          
+        }
+      }
+});
 client.login(process.env.BOT_TOKEN);
